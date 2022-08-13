@@ -21,7 +21,9 @@ pipeline{
     stage("Build"){
       
       steps{
-        echo 'Building the application....'
+        script{
+          gv.buildApp()
+        }
       }
     }
     
@@ -32,15 +34,18 @@ pipeline{
         }
       }
       steps{
-        echo 'Testing the application....'
+        script{
+          gv.testApp()
+        }
       }
     }
     
     stage("Deploy"){
       
       steps{
-        echo 'Deploying the application....'
-        echo "Deploying version ${params.VIRSION}"
+        script{
+          gv.deployApp()
+        }
       }
     }
     
