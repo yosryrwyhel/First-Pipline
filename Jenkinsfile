@@ -4,9 +4,7 @@ pipeline{
   tools{
     maven 'Maven'
   }
-  parameters{
-    
-  }
+  
   stages{
     
     stage("Build"){
