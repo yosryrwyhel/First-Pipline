@@ -1,8 +1,11 @@
 pipeline{
   
   agent any
-  environment{
-    NEW_VERSION = '1.3.0'
+  tools{
+    maven 'Maven'
+  }
+  parameters{
+    
   }
   stages{
     
@@ -10,7 +13,7 @@ pipeline{
       
       steps{
         echo 'Building the application....'
-        echo "Building version ${NEW_VERSION}"
+        sh"mvn install"
       }
     }
     
