@@ -9,14 +9,14 @@ pipeline{
   }
   stages{
     
-//     stage("init"){
+    stage("init"){
       
-//       steps{
-//         script{
-//           gv = load"script.groovy"
-//         }
-//       }
-//     }
+      steps{
+        script{
+          gv = load"script.groovy"
+        }
+      }
+    }
     
     stage("Build"){
       
@@ -26,7 +26,11 @@ pipeline{
     }
     
     stage("Test"){
-      
+      when {
+        expressoion{
+          params.executeTests
+        }
+      }
       steps{
         echo 'Testing the application....'
       }
