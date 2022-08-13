@@ -1,7 +1,7 @@
 pipeline{
   
   agent any
-  enviroment{
+  environment{
     NEW_VESION = '1.3.0'
   }
   stages{
