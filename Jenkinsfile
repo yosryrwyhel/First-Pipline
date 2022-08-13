@@ -36,6 +36,7 @@ pipeline{
       
       steps{
         echo 'Deploying the application....'
+        echo "Deploying version ${params.VIRSION}"
       }
     }
     
